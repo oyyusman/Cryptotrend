@@ -40,7 +40,7 @@ const dragStart = (e) => {
 }
 
 const dragging = (e) => {
-    if(!isDragging) return; // if isDragging is false return from here
+    if (!isDragging) return; // if isDragging is false return from here
     // Updates the scroll position of the carousel based on the cursor movement
     carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 }
@@ -52,13 +52,13 @@ const dragStop = () => {
 
 const infiniteScroll = () => {
     // If the carousel is at the beginning, scroll to the end
-    if(carousel.scrollLeft === 0) {
+    if (carousel.scrollLeft === 0) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
         carousel.classList.remove("no-transition");
     }
     // If the carousel is at the end, scroll to the beginning
-    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+    else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.offsetWidth;
         carousel.classList.remove("no-transition");
@@ -66,11 +66,11 @@ const infiniteScroll = () => {
 
     // Clear existing timeout & start autoplay if mouse is not hovering over carousel
     clearTimeout(timeoutId);
-    if(!wrapper.matches(":hover")) autoPlay();
+    if (!wrapper.matches(":hover")) autoPlay();
 }
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
     // Autoplay the carousel after every 2500 ms
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
 }
@@ -86,34 +86,34 @@ wrapper.addEventListener("mouseleave", autoPlay);
 const share = document.querySelector('.share');
 
 setTimeout(() => {
-  share.classList.add("hover");
+    share.classList.add("hover");
 }, 1000);
 
 setTimeout(() => {
-  share.classList.remove("hover");
+    share.classList.remove("hover");
 }, 3000);
 
 // This is script file
 
 $('.testimonials-container').owlCarousel({
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:6000,
-    margin:10,
-    nav:true,
-    navText:["<i class='fa-solid fa-arrow-left'></i>",
-             "<i class='fa-solid fa-arrow-right'></i>"],
-    responsive:{
-        0:{
-            items:1,
-            nav:false
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 6000,
+    margin: 10,
+    nav: true,
+    navText: ["<i class='fa-solid fa-arrow-left'></i>",
+        "<i class='fa-solid fa-arrow-right'></i>"],
+    responsive: {
+        0: {
+            items: 1,
+            nav: false
         },
-        600:{
-            items:1,
-            nav:true
+        600: {
+            items: 1,
+            nav: true
         },
-        768:{
-            items:2
+        768: {
+            items: 2
         },
     }
 })
@@ -121,14 +121,14 @@ const accordionContent = document.querySelectorAll(".accordion-content");
 
 accordionContent.forEach((item, index) => {
     let header = item.querySelector("header");
-    header.addEventListener("click", () =>{
+    header.addEventListener("click", () => {
         item.classList.toggle("open");
 
         let description = item.querySelector(".description");
-        if(item.classList.contains("open")){
+        if (item.classList.contains("open")) {
             description.style.height = `${description.scrollHeight}px`; //scrollHeight property returns the height of an element including padding , but excluding borders, scrollbar or margin
             item.querySelector("i").classList.replace("fa-plus", "fa-minus");
-        }else{
+        } else {
             description.style.height = "0px";
             item.querySelector("i").classList.replace("fa-minus", "fa-plus");
         }
@@ -136,9 +136,9 @@ accordionContent.forEach((item, index) => {
     })
 })
 
-function removeOpen(index1){
+function removeOpen(index1) {
     accordionContent.forEach((item2, index2) => {
-        if(index1 != index2){
+        if (index1 != index2) {
             item2.classList.remove("open");
 
             let des = item2.querySelector(".description");
