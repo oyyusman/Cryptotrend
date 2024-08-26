@@ -11,7 +11,7 @@
     - favicon
   -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  
+
   <link rel="shortcut icon" href="./newzulfi.svg" type="image/svg+xml">
   <script src="https://kit.fontawesome.com/dd9af7210e.js" crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -77,6 +77,9 @@
           </li>
           <li>
             <a href="#faq" class="navbar-link" data-nav-link>FAQS</a>
+          </li>
+          <li>
+            <a href="#leave_review" class="navbar-link" data-nav-link>Leave a Review</a>
           </li>
 
 
@@ -741,7 +744,7 @@
 
             </div>
 
-            
+
           </div>
           <div class="box">
 
@@ -752,7 +755,7 @@
 
             </div>
 
-            
+
           </div>
 
         </div>
@@ -1145,6 +1148,51 @@
           </div>
         </div>
       </section>
+      <section id="leave_review">
+        <h2 class="h2 section-title">Leave a Reivew</h2>
+        <div class="lcard">
+          <form action="https://api.web3forms.com/submit" method="POST" id="my_lform">
+            <input type="hidden" name="access_key" value="528bb477-0430-489f-ac4e-2499055e337f">
+            <div class="lprofile-pic">
+              <label for="profilePicture">
+                <img src="./assets/images/faceless.png" alt="Pic" id="profileImg">
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*"
+                  onchange="loadFile(event)">
+                <span>Upload Picture</span>
+              </label>
+            </div>
+            <div class="input-group">
+              <label for="userName">User Name</label>
+              <input type="text" id="userName" name="userName" required>
+            </div>
+            <div class="input-group">
+              <label for="userEmail">Email</label>
+              <input type="email" id="userEmail" name="userEmail" required>
+            </div>
+            <div class="input-group">
+              <label for="projectName">Project Name</label>
+              <input type="text" id="projectName" name="projectName" required>
+            </div>
+            <div class="input-group">
+              <label for="rating">Rating</label>
+              <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="review">Review</label>
+              <textarea id="review" name="review" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+              <button class="lbutton" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
 
 
 
@@ -1194,6 +1242,18 @@
     - ionicon link
   -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+      </script>
+      <script>
+        function loadFile(event) {
+          var image = document.getElementById('profileImg');
+          image.src = URL.createObjectURL(event.target.files[0]);
+        }
+        document.getElementById('my_lform').addEventListener('submit', function () {
+          setTimeout(() => {
+            this.reset(); // Reset the form fields
+            document.getElementById('profileImg').src = './assets/images/faceless.png'; // Reset the profile picture to default
+          }, 0);
+        });
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
       </script>

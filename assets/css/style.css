@@ -2540,6 +2540,104 @@ input[type="radio"] {
 .yt:hover {
   background: #FE0000;
 }
+.lcard {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* max-width: 400px; */
+  padding: 20px;
+  box-sizing: border-box;
+}
+.lprofile-pic {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.lprofile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  background-color: #f4f4f4;
+}
+.lprofile-pic input {
+  display: none;
+}
+.lprofile-pic span {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+.lprofile-pic label {
+  cursor: pointer;
+}
+.lprofile-pic label:hover span {
+  color: #007BFF;
+}
+.input-group {
+  margin-bottom: 15px;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.stars {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin: 0 auto;
+}
+.stars input {
+  display: none;
+}
+.stars label {
+  width: 25px;
+  height: 25px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>') no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+}
+.stars label:hover,
+.stars label:hover~label {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+}
+
+.stars input:checked~label,
+.stars input:checked~label~label {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+}
+
+.stars input:checked~label~label~label,
+.stars input:checked~label~label~label~label {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+}
+.lbutton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.lbutton:hover {
+  background-color: #0056b3;
+}
 
 /* responsive */
 @media only screen and (min-width: 320px) and (max-width: 991px) {
